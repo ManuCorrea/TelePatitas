@@ -1,0 +1,47 @@
+Público objetivo
+Diferentes requisitos alimenticios y/o control del animal
+
+
+Control mediante RFID -> Permite tener a un gato a dieta y asegurarte de que come su pienso
+Necesitas menos espacio
+Que permita alternar el sabor
+Control Remoto o local
+Ofertas del precio del pienso
+Google Assistant -> Alimenta a mi gato
+Calendario Estadisticas
+Plato extraible (aluminio)
+
+Intervalos gato puede comer. Si puede le echamos x numero de veces por intervalo hasta gastar los usos diarios.
+
+Pese la comida para saber cuanto come el gato cada vez que va a comer -> Evita el problema de no saber cuanto come tu gato si tienes mas de uno
+Cuente las veces que va a comer y la hora
+Que avise cuando queda poco pienso y agua
+Que envie notificacion al movil
+Que haga sonido cuando heche la comida para que el gato lo asocie
+Alertas si tu gato deja de comer (tal vez enfermo)
+Estadisticas de consumo de tu gato -> Si te vas de viaje sabes que está comiendo
+Consejos de alimentación de tu gato
+Opcion para regimen temporal o horarios
+
+Opcion app para añadir un perfil de animal, con sus caracteristicas, el pienso que toman y los comederos a los que tienen acceso
+
+Calcular dinero que pierdes si tienes dos gatos, uno con dieta y otro sin y comen el pienso que no es.
+
+
+interfaz animal
+
+propiedades:
+- foto
+- nombre
+- edad
+- raza
+- peso
+- pienso que toma
+- cantidad pienso
+- comederos a los que tiene acceso
+- datos de uso
+
+Formas de alimentar gatos:
+
+- Libre (x raciones por día)
+
