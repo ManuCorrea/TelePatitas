@@ -48,9 +48,7 @@ Base: {"status": 401, "response": {}}
                     "foto": "",
                     "nombre": "Neko",
                     "observaciones": {
-                        "datos": {
                             "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2": {"mensaje": "Aún no ha comido"}
-                        }
                     },
                     "pienso": "Applaws",
                     "tipo": "Gato"
@@ -92,12 +90,29 @@ Base: {"status": 401, "response": {}}
         "foto": "",
         "nombre": "Nekito",
         "observaciones": {
-            "datos": {
-                "id": "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2",
-                "mensaje": "Aún no ha comido"
-            }
+                "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2": {"mensaje": "Aún no ha comido"}
         },
         "pienso": "Applaws",
+        "tipo": "Perro"
+    }
+}
+
+/api/animal/añadirAnimal
+
+{
+    "0fecb9fa-8e5c-4b6a-831a-32a9bc64f54a":
+    {
+        "cantidadDiaria": 150,
+        "comederosAcceso": {
+            "e1750ed4-59e0-4ca4-ab91-d8b1123377bb": true
+        },
+        "estado": "Enfermo",
+        "foto": "",
+        "nombre": "Antonio",
+        "observaciones": {
+                "9ada8af2-d7d3-4fb0-a09e-f1d2ba271bc2": {"mensaje": "Ha llegado al límite diario"}
+        },
+        "pienso": "TensorFood",
         "tipo": "Perro"
     }
 }

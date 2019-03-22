@@ -6,19 +6,17 @@ import time
 from uuid import uuid4
 app = Flask(__name__)
 
+# Dummy database
 datos = defaultdict(dict)
-idcomederoPrueba = str(uuid4())
 datos["ErManu"] = {
 	"animales": {
 		"95bf8d4d-beb0-4163-9bc8-febdeba1fa5f": {
 			"nombre": "Neko",
 			"estado": "Sano",
 			"observaciones": {
-				"datos": {
-					"65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2":
-                    {
-                        "mensaje": "Aún no ha comido"
-                    }
+				"65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2":
+				{
+					"mensaje": "Aún no ha comido"
 				}
 			},
 			"tipo": "Gato",
@@ -78,13 +76,17 @@ def login():
 @app.route("/api/user/getData", methods=['GET'])
 def getData():
     response = {"status": 403, "response": {}}
+	#Comprobamos que las credenciales son válidas
     if "Authorization" in request.headers.keys():
         if request.headers["Authorization"] != "":
             username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
             if username in credenciales.keys():
+				# Devolvemos los datos del usuario
                 response = {"status": 200, "response": datos}
     return jsonify(response)
 
+
+# Tal como está diseñado permite modificar o añadir animales
 @app.route("/api/animal/modificarAnimal", methods=["POST"])
 def modificarAnimal():
     datosAnimal = request.get_json(silent=True)
@@ -95,11 +97,29 @@ def modificarAnimal():
             username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
             if username in credenciales.keys():
                 for key in datosAnimal.keys():
+					# Cambiamos los datos del usuario
                     datos[username]["animales"][key] = datosAnimal[key]
                 response = {"status": 200, "response": {}}
 
 
     return jsonify(response)
 
+
+@app.route("/api/animal/modificarComedero", methods=["POST"])
+def modificarComedero():
+    datosComedero = request.get_json(silent=True)
+    
+    response = {"status": 403, "response": {}}
+    if "Authorization" in request.headers.keys():
+        if request.headers["Authorization"] != "":
+            username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
+            if username in credenciales.keys():
+                for key in datosComedero.keys():
+					# Cambiamos los datos del usuario
+                    datos[username]["comederos"][key] = datosComedero[key]
+                response = {"status": 200, "response": {}}
+
+
+    return jsonify(response)
 
 app.run()
