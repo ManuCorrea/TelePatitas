@@ -1,0 +1,81 @@
+Ideas API:
+
+/api/user/login
+
+{'username': jfierq, 'password': djsfoai}
+
+/api/realtime/feedme
+
+/api/animal/nuevoAnimal
+
+{'name': De}
+
+/api/animal/modificarAnimal/id
+
+Envía cambios del objeto
+{'nombre': dnfja}
+
+/api/user/getData
+
+
+
+Neko: 95bf8d4d-beb0-4163-9bc8-febdeba1fa5f
+    Observacion:  65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2 
+
+Comedero:  e1750ed4-59e0-4ca4-ab91-d8b1123377bb 
+registro:  3765815a-4303-49bd-9063-cc775c90c3b7 
+
+
+Datos ejemplo para APP:
+
+Base: {"status": 401, "response": {}}
+
+/api/user/login
+{"status": 200, "response": {"token": token}}
+
+/api/user/getData
+
+{
+    "response": {
+        "ErManu": {
+            "animales": {
+                "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f": {
+                    "cantidadDiaria": 60,
+                    "comederosAcceso": {
+                        "e1750ed4-59e0-4ca4-ab91-d8b1123377bb": true
+                    },
+                    "estado": "Sano",
+                    "foto": "",
+                    "nombre": "Neko",
+                    "observaciones": {
+                        "datos": {
+                            "id": "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2",
+                            "mensaje": "Aún no ha comido"
+                        }
+                    },
+                    "pienso": "Applaws",
+                    "tipo": "Gato"
+                }
+            },
+            "comederos": {
+                "e1750ed4-59e0-4ca4-ab91-d8b1123377bb": {
+                    "aguaCargada": 150,
+                    "comidaCargada": 500,
+                    "nivelAgua": 50,
+                    "nivelComida": 100,
+                    "registros": {
+                        "3765815a-4303-49bd-9063-cc775c90c3b7": {
+                            "datos": {
+                                "comidaConsumida": 25
+                            },
+                            "generadoPor": "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f",
+                            "hora": 1553271048,
+                            "tipoRegistro": "0"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "status": 200
+}
