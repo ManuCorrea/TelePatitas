@@ -49,8 +49,7 @@ Base: {"status": 401, "response": {}}
                     "nombre": "Neko",
                     "observaciones": {
                         "datos": {
-                            "id": "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2",
-                            "mensaje": "Aún no ha comido"
+                            "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2": {"mensaje": "Aún no ha comido"}
                         }
                     },
                     "pienso": "Applaws",
@@ -78,4 +77,27 @@ Base: {"status": 401, "response": {}}
         }
     },
     "status": 200
+}
+
+/api/animal/modificarAnimal
+
+{
+    "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f":
+    {
+        "cantidadDiaria": 35,
+        "comederosAcceso": {
+            "e1750ed4-59e0-4ca4-ab91-d8b1123377bb": true
+        },
+        "estado": "Enfermo",
+        "foto": "",
+        "nombre": "Nekito",
+        "observaciones": {
+            "datos": {
+                "id": "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2",
+                "mensaje": "Aún no ha comido"
+            }
+        },
+        "pienso": "Applaws",
+        "tipo": "Perro"
+    }
 }

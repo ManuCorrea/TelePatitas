@@ -15,8 +15,10 @@ datos["ErManu"] = {
 			"estado": "Sano",
 			"observaciones": {
 				"datos": {
-					"id": "65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2",
-					"mensaje": "Aún no ha comido"
+					"65bc86d0-a6e9-4d78-bbc5-eaa38748e5e2":
+                    {
+                        "mensaje": "Aún no ha comido"
+                    }
 				}
 			},
 			"tipo": "Gato",
@@ -73,7 +75,6 @@ def login():
 
     return jsonify(response)
 
-
 @app.route("/api/user/getData", methods=['GET'])
 def getData():
     response = {"status": 403, "response": {}}
@@ -83,5 +84,22 @@ def getData():
             if username in credenciales.keys():
                 response = {"status": 200, "response": datos}
     return jsonify(response)
+
+@app.route("/api/animal/modificarAnimal", methods=["POST"])
+def modificarAnimal():
+    datosAnimal = request.get_json(silent=True)
+    
+    response = {"status": 403, "response": {}}
+    if "Authorization" in request.headers.keys():
+        if request.headers["Authorization"] != "":
+            username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
+            if username in credenciales.keys():
+                for key in datosAnimal.keys():
+                    datos[username]["animales"][key] = datosAnimal[key]
+                response = {"status": 200, "response": {}}
+
+
+    return jsonify(response)
+
 
 app.run()
