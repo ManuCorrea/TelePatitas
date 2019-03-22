@@ -97,7 +97,7 @@ Base: {"status": 401, "response": {}}
     }
 }
 
-/api/animal/añadirAnimal
+/api/animal/modificarAnimal
 
 {
     "0fecb9fa-8e5c-4b6a-831a-32a9bc64f54a":
@@ -114,5 +114,23 @@ Base: {"status": 401, "response": {}}
         },
         "pienso": "TensorFood",
         "tipo": "Perro"
+    }
+}
+
+
+"301cbc55-9ccd-4cd1-99fe-31d9e931c2e2": {
+    "hora": 1553052002,
+    "generadoPor": "e1750ed4-59e0-4ca4-ab91-d8b1123377bb",
+    "tipoRegistro": "0",
+    "datos": {
+        "comidaConsumida": 10
+    }
+},
+"5811e419-bfe6-4e85-94a1-a550b65fcabe": {
+    "hora": 1553092440,
+    "generadoPor": "e1750ed4-59e0-4ca4-ab91-d8b1123377bb",
+    "tipoRegistro": "0",
+    "datos": {
+        "comidaConsumida": 20
     }
 }
