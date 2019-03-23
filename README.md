@@ -23,3 +23,7 @@ Además, si deseas conocer cómo funciona la API de Telepatitas podrás acceder 
 ## Licencia
 
 Telepatitas está licenciado con la licencia CC BY-NC-SA 4.0. Puedes leer más acerca de qué permite y qué no en el siguiente enlace: <https://creativecommons.org/licenses/by-nc-sa/4.0/>
+
+Los iconos usados en la APP son de licencia CC:
+- roundicons.com  Reno de la App
+- Chanut is Industries Iconos varios
