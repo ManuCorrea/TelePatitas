@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="header">22sp</dimen>
+    <dimen name="topic">16sp</dimen>
+    <dimen name="extras">12sp</dimen>
+    <dimen name="cardElevation">2dp</dimen>
+    <dimen name="cardCornerRadius">16dp</dimen>
+    <dimen name="imageLayoutHeight">230dp</dimen>
+    <dimen name="image_icon">88dp</dimen>
+</resources>
