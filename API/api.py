@@ -48,7 +48,7 @@ datos["ErManu"] = {
 	},
 	"comederos": {
 		"e1750ed4-59e0-4ca4-ab91-d8b1123377bb": {
-			"nombre": "Cocina"
+			"nombre": "Cocina",
 			"ultimaRecarga": 1553203380,
 			"comidaCargada": 500,
 			"nivelComida": 100,
@@ -135,11 +135,9 @@ def login():
 @app.route("/api/user/getData", methods=['GET'])
 def getData():
     response = {"status": 403, "response": {}}
-
 	# Evitamos tener que enviar el token en la rama de desarrollo
-	if debug_mode:
-		response = {"status": 200, "response": datos}
-
+    if debug_mode:
+        response = {"status": 200, "response": datos}
 	#Comprobamos que las credenciales son válidas
     if "Authorization" in request.headers.keys():
         if request.headers["Authorization"] != "":
@@ -156,11 +154,11 @@ def modificarAnimal():
     datosAnimal = request.get_json(silent=True)
 
 	# Evitamos tener que enviar el token en la rama de desarrollo
-	if debug_mode:
-		for key in datosAnimal.keys():
+    if debug_mode:
+        for key in datosAnimal.keys():
 			# Cambiamos los datos del usuario
-			datos[username]["animales"][key] = datosAnimal[key]
-		response = {"status": 200, "response": {}}
+            datos["ErManu"]["animales"][key] = datosAnimal[key]
+        response = {"status": 200, "response": {}}
     
     response = {"status": 403, "response": {}}
     if "Authorization" in request.headers.keys():
@@ -180,11 +178,11 @@ def modificarComedero():
     datosComedero = request.get_json(silent=True)
 
 	# Evitamos tener que enviar el token en la rama de desarrollo
-	if debug_mode:
-		for key in datosComedero.keys():
+    if debug_mode:
+        for key in datosComedero.keys():
 			# Cambiamos los datos del usuario
-			datos[username]["comederos"][key] = datosComedero[key]
-		response = {"status": 200, "response": {}}
+            datos["ErManu"]["comederos"][key] = datosComedero[key]
+        response = {"status": 200, "response": {}}
     
     response = {"status": 403, "response": {}}
     if "Authorization" in request.headers.keys():
