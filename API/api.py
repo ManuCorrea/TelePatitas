@@ -6,6 +6,9 @@ import time
 from uuid import uuid4
 app = Flask(__name__)
 
+# Desactiva el uso del token
+debug_mode = True
+
 # Dummy database
 datos = defaultdict(dict)
 datos["ErManu"] = {
@@ -45,13 +48,14 @@ datos["ErManu"] = {
 	},
 	"comederos": {
 		"e1750ed4-59e0-4ca4-ab91-d8b1123377bb": {
+			"ultimaRecarga": 1553203380,
 			"comidaCargada": 500,
 			"nivelComida": 100,
 			"nivelAgua": 50,
 			"aguaCargada": 150,
 			"registros": {
 				"3765815a-4303-49bd-9063-cc775c90c3b7": {
-					"hora": 1553271048,
+					"fecha": 1553271048,
 					"generadoPor": "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f",
 					"tipoRegistro": "0",
 					"datos": {
@@ -59,7 +63,7 @@ datos["ErManu"] = {
 					}
 				},
 				"cca88d90-8aa5-4784-a7fa-7fe0508671d6": {
-					"hora": 1553203380,
+					"fecha": 1553203380,
 					"generadoPor": "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f",
 					"tipoRegistro": "0",
 					"datos": {
@@ -67,7 +71,7 @@ datos["ErManu"] = {
 					}
 				},
 				"3775cf5a-3f0b-4bfc-8ad5-fd1d2ea20870": {
-					"hora": 1553171640,
+					"fecha": 1553171640,
 					"generadoPor": "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f",
 					"tipoRegistro": "0",
 					"datos": {
@@ -75,7 +79,7 @@ datos["ErManu"] = {
 					}
 				},
 				"650f819c-8d39-4959-86e6-10af2526b5a9": {
-					"hora": 1553142192,
+					"fecha": 1553142192,
 					"generadoPor": "95bf8d4d-beb0-4163-9bc8-febdeba1fa5f",
 					"tipoRegistro": "0",
 					"datos": {
@@ -83,7 +87,7 @@ datos["ErManu"] = {
 					}
 				},
 				"301cbc55-9ccd-4cd1-99fe-31d9e931c2e2": {
-					"hora": 1553052002,
+					"fecha": 1553052002,
 					"generadoPor": "e1750ed4-59e0-4ca4-ab91-d8b1123377bb",
 					"tipoRegistro": "0",
 					"datos": {
@@ -91,7 +95,7 @@ datos["ErManu"] = {
 					}
 				},
 				"5811e419-bfe6-4e85-94a1-a550b65fcabe": {
-					"hora": 1553092440,
+					"fecha": 1553092440,
 					"generadoPor": "e1750ed4-59e0-4ca4-ab91-d8b1123377bb",
 					"tipoRegistro": "0",
 					"datos": {
@@ -130,12 +134,17 @@ def login():
 @app.route("/api/user/getData", methods=['GET'])
 def getData():
     response = {"status": 403, "response": {}}
+
+	# Evitamos tener que enviar el token en la rama de desarrollo
+	if debug_mode:
+		response = {"status": 200, "response": datos}
+
 	#Comprobamos que las credenciales son válidas
     if "Authorization" in request.headers.keys():
         if request.headers["Authorization"] != "":
             username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
             if username in credenciales.keys():
-				# Devolvemos los datos del usuario
+				# Devolvemos los datos del usuario, en este caso los datos dummy
                 response = {"status": 200, "response": datos}
     return jsonify(response)
 
@@ -144,6 +153,13 @@ def getData():
 @app.route("/api/animal/modificarAnimal", methods=["POST"])
 def modificarAnimal():
     datosAnimal = request.get_json(silent=True)
+
+	# Evitamos tener que enviar el token en la rama de desarrollo
+	if debug_mode:
+		for key in datosAnimal.keys():
+			# Cambiamos los datos del usuario
+			datos[username]["animales"][key] = datosAnimal[key]
+		response = {"status": 200, "response": {}}
     
     response = {"status": 403, "response": {}}
     if "Authorization" in request.headers.keys():
@@ -161,6 +177,13 @@ def modificarAnimal():
 @app.route("/api/animal/modificarComedero", methods=["POST"])
 def modificarComedero():
     datosComedero = request.get_json(silent=True)
+
+	# Evitamos tener que enviar el token en la rama de desarrollo
+	if debug_mode:
+		for key in datosComedero.keys():
+			# Cambiamos los datos del usuario
+			datos[username]["comederos"][key] = datosComedero[key]
+		response = {"status": 200, "response": {}}
     
     response = {"status": 403, "response": {}}
     if "Authorization" in request.headers.keys():
