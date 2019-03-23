@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="32dp"
+    android:paddingRight="32dp">
+
+    <ImageView
+        android:id="@+id/reno"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+
+        android:src="@drawable/deer_smile"/>
+
+    <TextView
+        android:id="@+id/bienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido!"
+        android:textSize="37sp"
+        android:layout_below="@id/reno"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FF47525E"
+        />
+
+    <TextView
+        android:id="@+id/pregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cómo quieres [change]?"
+        android:textSize="25sp"
+        android:layout_below="@id/bienvenido"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FF47525E"
+        android:layout_margin="8dp"
+        />
+
+    <Button
+        android:paddingLeft="16dp"
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_standard"
+        android:layout_below="@id/pregunta"
+        android:drawableLeft="@drawable/ic_action_name"
+        android:text="Solo en casa"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:onClick="local"
+        />
+
+    <Button
+        android:paddingLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/btn_cloud"
+        android:layout_below="@id/btn1"
+
+        android:drawableLeft="@drawable/ic_action_name"
+        android:text="todos lados*"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:onClick="cloud"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:text="*Requiere registro web"
+        android:layout_below="@id/btn2"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

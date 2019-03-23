@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">SmartFeeding</string>
+    <string name="tab_1">Animales</string>
+    <string name="tab_2">Pienso</string>
+    <string name="tab_3">Estadísticas</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="pienso_1">Salmón</string>
+    <string name="tiempo_1">12 horas sin comer</string>
+    <string name="animal_1">Coco</string>
+    <string name="stat_1">nose</string>
+</resources>

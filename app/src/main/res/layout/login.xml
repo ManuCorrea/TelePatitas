@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingTop="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_user"
+            />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/input_user"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Usuario"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="50dp">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_lock"
+            />
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/input_psw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Contraseña"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+
+    <TextView android:id="@+id/link_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="No account yet? Create one"
+        android:gravity="center"
+        android:textSize="16dip"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/btn_standard"
+        android:textColor="#FFFFFFFF"
+        android:text="Entrar"
+        android:textSize="21sp"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="16dp"
+        android:onClick="entrar"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_f"
+        android:text="Entrar con Facebook"
+        android:textColor="#FFFFFFFF"
+        android:textSize="21sp"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="16dp"
+        android:drawableLeft="@drawable/ic_fb"
+        android:paddingLeft="16dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_t"
+        android:text="Entrar con Twitter"
+        android:textColor="#FFFFFFFF"
+        android:textSize="21sp"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="16dp"
+        android:drawableLeft="@drawable/tw"
+        android:paddingLeft="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_g"
+        android:text="Entrar con Google"
+        android:textColor="#FFFFFFFF"
+        android:textSize="21sp"
+        android:fontFamily="sans-serif"
+        android:drawableLeft="@drawable/ic_g"
+        android:paddingLeft="16dp"/>
+
+
+</LinearLayout>
