@@ -48,6 +48,7 @@ datos["ErManu"] = {
 	},
 	"comederos": {
 		"e1750ed4-59e0-4ca4-ab91-d8b1123377bb": {
+			"nombre": "Cocina"
 			"ultimaRecarga": 1553203380,
 			"comidaCargada": 500,
 			"nivelComida": 100,
@@ -188,7 +189,7 @@ def modificarComedero():
     response = {"status": 403, "response": {}}
     if "Authorization" in request.headers.keys():
         if request.headers["Authorization"] != "":
-            username = jwt.decode(request.headers["Authorization"], 'HackForGood', algorithms=['HS256'])["username"]
+            username = jwt.decode(request.headers["Authorization"],	 'HackForGood', algorithms=['HS256'])["username"]
             if username in credenciales.keys():
                 for key in datosComedero.keys():
 					# Cambiamos los datos del usuario
